@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <!-- Mobile Specific & SEO Metas -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="Industrial Coding Machine Supplier in Sri Lanka. Supplier of Continuous Inkjet (CIJ) spare parts and maintenance services.">
+    <meta name="author" content="Vishwa Kaushal">
+    <meta name="ownername" content="Rohana Ranatunga">
+    <meta name="generator" content="VK Industrial Technologies">
+    <meta name="google-adsense-account" content="ca-pub-3488214634859413">
+    
+    <title>Component Catalog | VK Industrial Technologies</title>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+    
+    <!-- Fonts and CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="top-bar">
+        <div>Continuous Inkjet (CIJ) Spare Parts & Service Hotline</div>
+        <div><strong>Support:</strong> +94 XX XXX XXXX</div>
+    </div>
+
+    <header>
+        <div class="logo">VK <span>TECHNOLOGIES</span></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="products.html" style="color: var(--blue-electric);">Spare Parts Catalog</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <a href="contact.html" class="btn-primary">Request Parts Quote</a>
+    </header>
+
+    <section style="padding-top: 3rem;">
+        <div class="section-header">
+            <h2>Industrial Spare Parts & Consumables</h2>
+            <p>Select components engineered for high durability and reduced factory maintenance costs.</p>
+        </div>
+
+        <div class="catalog-filter">
+            <button class="filter-btn active" onclick="filterProducts('all')">All Products</button>
+            <button class="filter-btn" onclick="filterProducts('nozzles')">Nozzles & Printheads</button>
+            <button class="filter-btn" onclick="filterProducts('fluids')">Inks & Consumables</button>
+            <button class="filter-btn" onclick="filterProducts('pumps')">Pumps & Valves</button>
+        </div>
+
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card" data-category="nozzles">
+                <div>
+                    <div class="product-tag">Printhead Component</div>
+                    <div class="product-title">60 Micron CIJ Nozzle Assembly</div>
+                    <div class="product-sku">SKU: VK-NZL-60U</div>
+                    <div class="product-desc">High-precision sapphire micro-nozzle for precise droplet deflection. Built for heavy-duty industrial coding lines.</div>
+                </div>
+                <!-- Redirects to Contact page with URL parameter -->
+                <a href="contact.html?sku=VK-NZL-60U" class="btn-secondary" style="text-align: center;">Inquire SKU</a>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card" data-category="fluids">
+                <div>
+                    <div class="product-tag">Consumables</div>
+                    <div class="product-title">Industrial Fast-Dry Black Ink (1L)</div>
+                    <div class="product-sku">SKU: VK-INK-BLK1L</div>
+                    <div class="product-desc">Formulated for optimal fluid dynamics on plastic, glass bottles, and packaging films. Low filter wear.</div>
+                </div>
+                <a href="contact.html?sku=VK-INK-BLK1L" class="btn-secondary" style="text-align: center;">Inquire SKU</a>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="product-card" data-category="pumps">
+                <div>
+                    <div class="product-tag">Hydraulic System</div>
+                    <div class="product-title">Main Pressure Diaphragm Pump</div>
+                    <div class="product-sku">SKU: VK-PMP-MAIN</div>
+                    <div class="product-desc">Heavy-duty core fluid pump engineered to maintain uniform ink pressure during continuous 24/7 factory operation.</div>
+                </div>
+                <a href="contact.html?sku=VK-PMP-MAIN" class="btn-secondary" style="text-align: center;">Inquire SKU</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo" style="color: #FFF;">VK <span style="color: var(--blue-electric);">TECHNOLOGIES</span></div>
+            <div style="font-size: 0.9rem; color: #CBD5E1;">Industrial Innovation. Reliable Solutions.</div>
+        </div>
+        <div class="footer-bottom">© 2026 VK Industrial Technologies. All rights reserved.</div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <!-- Mobile Specific & SEO Metas -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="Industrial Coding Machine Supplier in Sri Lanka. Supplier of Continuous Inkjet (CIJ) spare parts and maintenance services.">
+    <meta name="author" content="Vishwa Kaushal">
+    <meta name="ownername" content="Rohana Ranatunga">
+    <meta name="generator" content="VK Industrial Technologies">
+    <meta name="google-adsense-account" content="ca-pub-3488214634859413">
+    
+    <title>Contact & Inquiries | Coding & Automation Systems</title>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+    
+    <!-- Fonts and CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="top-bar">
+        <div>Continuous Inkjet (CIJ) Spare Parts & Service Hotline</div>
+        <div><strong>Support:</strong> +94 77 239 6599</div>
+    </div>
+
+    <header>
+        <div class="logo">VK <span>TECHNOLOGIES</span></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="products.html">Spare Parts Catalog</a>
+            <a href="contact.html" style="color: var(--blue-electric);">Contact</a>
+        </nav>
+    </header>
+
+    <section class="bg-alt" style="padding-top: 4rem; min-height: 80vh;">
+        <div class="contact-container">
+            <div>
+                <h3 style="color: var(--navy-primary); font-size: 1.6rem; margin-bottom: 1rem;">Technical Sales & Support</h3>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Request spare part availability, schedule line servicing, or ask technical questions.</p>
+                <p style="font-size: 0.9rem; color: var(--steel-gray); margin-bottom: 0.5rem;"><strong>Location:</strong> No,161/1,Magalegoda, Veyangoda, Sri Lanka</p>
+                <p style="font-size: 0.9rem; color: var(--steel-gray); margin-bottom: 0.5rem;"><strong>Email:</strong> info@vkindustrialtechnologies.lk</p>
+                <p style="font-size: 0.9rem; color: var(--steel-gray);"><strong>Service Line:</strong> +94 77 239 6599</p>
+            </div>
+
+            <form onsubmit="event.preventDefault(); alert('Inquiry Sent! Technical team will respond shortly.');">
+                <input type="text" placeholder="Company / Contact Name" required>
+                <input type="email" placeholder="Business Email" required>
+                <textarea id="inquiryTextarea" rows="4" placeholder="Enter part SKU, printer model, or service request details..." required></textarea>
+                <button type="submit" class="btn-primary">Submit Inquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo" style="color: #FFF;">VK <span style="color: var(--blue-electric);">TECHNOLOGIES</span></div>
+            <div style="font-size: 0.9rem; color: #CBD5E1;">Industrial Innovation. Reliable Solutions.</div>
+        </div>
+        <div class="footer-bottom">© 2026 VK Industrial Technologies. All rights reserved.</div>
+    </footer>
+
+    <script>
+        // Check if the URL has a SKU parameter (e.g. contact.html?sku=VK-NZL-60U)
+        const urlParams = new URLSearchParams(window.location.search);
+        const sku = urlParams.get('sku');
+        if(sku) {
+            document.getElementById('inquiryTextarea').value = "I am requesting pricing and availability for Part SKU: " + sku;
+        }
+    </script>
+</body>
+</html>
