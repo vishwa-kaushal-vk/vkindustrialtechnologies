@@ -2,29 +2,63 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
-    <!-- Mobile Specific & SEO Metas -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="description" content="Industrial Coding Machine Supplier in Sri Lanka. Supplier of Continuous Inkjet (CIJ) spare parts and maintenance services.">
+    <meta name="description" content="Industrial Coding Machine Supplier in Sri Lanka. Supplier of Continuous Inkjet (CIJ) spare parts and factory automation services.">
     <meta name="author" content="Vishwa Kaushal">
     <meta name="ownername" content="Rohana Ranatunga">
     <meta name="generator" content="VK Industrial Technologies">
-    <meta name="google-adsense-account" content="ca-pub-3488214634859413">
     
-    <title>Contact & Inquiries | Coding & Automation Systems</title>
+    <title>Communicate | VK Industrial Technologies</title>
     
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
-    
-    <!-- Fonts and CSS -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 3rem;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+        .contact-container::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 4px; height: 100%;
+            background: var(--brand-red);
+        }
+        input, textarea {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 0.95rem;
+            outline: none;
+            background: #FAFAFA;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        input:focus, textarea:focus {
+            border-color: var(--brand-red);
+            background: #FFFFFF;
+            box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.1);
+        }
+        @media (max-width: 900px) { .contact-container { grid-template-columns: 1fr; padding: 2rem; } }
+    </style>
 </head>
-<body>
+<body class="engineering-grid">
 
     <div class="top-bar">
-        <div>Continuous Inkjet (CIJ) Spare Parts & Service Hotline</div>
+        <div>System Status: Online | CIJ Spare Parts & Service Hotline</div>
         <div><strong>Support:</strong> +94 77 239 6599</div>
     </div>
 
@@ -33,44 +67,69 @@
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
-            <a href="products.html">Spare Parts Catalog</a>
-            <a href="contact.html" style="color: var(--blue-electric);">Contact</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html" style="color: var(--brand-red);">Contact Us</a>
         </nav>
+        <a href="contact.html" class="btn-primary">Initiate Inquiry</a>
     </header>
 
-    <section class="bg-alt" style="padding-top: 4rem; min-height: 80vh;">
+    <section style="padding-top: 5rem; min-height: 85vh;">
         <div class="contact-container">
             <div>
-                <h3 style="color: var(--navy-primary); font-size: 1.6rem; margin-bottom: 1rem;">Technical Sales & Support</h3>
-                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Request spare part availability, schedule line servicing, or ask technical questions.</p>
-                <p style="font-size: 0.9rem; color: var(--steel-gray); margin-bottom: 0.5rem;"><strong>Location:</strong> No,161/1,Magalegoda, Veyangoda, Sri Lanka</p>
-                <p style="font-size: 0.9rem; color: var(--steel-gray); margin-bottom: 0.5rem;"><strong>Email:</strong> info@vkindustrialtechnologies.lk</p>
-                <p style="font-size: 0.9rem; color: var(--steel-gray);"><strong>Service Line:</strong> +94 77 239 6599</p>
+                <h3 style="color: var(--brand-dark); font-size: 1.8rem; margin-bottom: 1rem; text-transform: uppercase;">Technical Operations Command</h3>
+                <p style="color: var(--text-muted); margin-bottom: 2rem; line-height: 1.7;">Request spare part availability, schedule line servicing, or initiate consultations for factory automation logic.</p>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <strong style="color: var(--brand-dark); font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">[ LOCATION ]</strong>
+                    <p style="color: var(--text-muted);">No,161/1,Magalegoda, Veyangoda, Sri Lanka</p>
+                </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <strong style="color: var(--brand-dark); font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">[ EMAIL PROTOCOL ]</strong>
+                    <p style="color: var(--text-muted);">info@vkindustrialtechnologies.lk</p>
+                </div>
+                <div>
+                    <strong style="color: var(--brand-dark); font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">[ SERVICE LINE ]</strong>
+                    <p style="color: var(--brand-red); font-weight: 700;">+94 77 239 6599</p>
+                </div>
             </div>
+            <form action="https://formspree.io/f/moeaqwpv" method="POST" style="display: flex; flex-direction: column; gap: 1.2rem;">
+    
+                <!-- Added name="company" -->
+                <input type="text" name="company" placeholder="Designation / Company Name" required>
+    
+                <!-- Added name="email" -->
+                <input type="email" name="email" placeholder="Secure Business Email" required>
+    
+                <!-- Added name="message" -->
+                <textarea id="inquiryTextarea" name="message" rows="5" placeholder="Enter hardware SKU, CIJ printer model, or automation logic request details..." required></textarea>
+    
+                <button type="submit" class="btn-primary" style="width: 100%; text-align: center; font-size: 1rem; padding: 1rem;">Transmit Request</button>
 
-            <form onsubmit="event.preventDefault(); alert('Inquiry Sent! Technical team will respond shortly.');">
-                <input type="text" placeholder="Company / Contact Name" required>
-                <input type="email" placeholder="Business Email" required>
-                <textarea id="inquiryTextarea" rows="4" placeholder="Enter part SKU, printer model, or service request details..." required></textarea>
-                <button type="submit" class="btn-primary">Submit Inquiry</button>
             </form>
         </div>
     </section>
 
-    <footer>
+    <!-- Mobile Sticky Action Bar -->
+    <div class="mobile-action-bar">
+        <a href="tel:+94XXXXXXXXX"><span style="color: var(--brand-red);">●</span> Call Support</a>
+        <a href="products.html"><span style="color: var(--brand-red);">●</span> Parts</a>
+        <a href="contact.html"><span style="color: var(--brand-red);">●</span> Email</a>
+    </div>
+
+    <footer style="margin-top: auto;">
         <div class="footer-content">
-            <div class="logo" style="color: #FFF;">VK <span style="color: var(--blue-electric);">TECHNOLOGIES</span></div>
-            <div style="font-size: 0.9rem; color: #CBD5E1;">Industrial Innovation. Reliable Solutions.</div>
+            <div class="logo" style="color: #FFF;">VK <span style="color: var(--brand-red);">TECHNOLOGIES</span></div>
+            <div style="font-size: 0.9rem; color: #E4E4E7;">Industrial Innovation. Reliable Solutions.</div>
         </div>
         <div class="footer-bottom">© 2026 VK Industrial Technologies. All rights reserved.</div>
     </footer>
 
     <script>
-        // Check if the URL has a SKU parameter (e.g. contact.html?sku=VK-NZL-60U)
+        // Check if the URL has a SKU parameter
         const urlParams = new URLSearchParams(window.location.search);
         const sku = urlParams.get('sku');
         if(sku) {
-            document.getElementById('inquiryTextarea').value = "I am requesting pricing and availability for Part SKU: " + sku;
+            document.getElementById('inquiryTextarea').value = "I am requesting specifications, pricing, and availability for Hardware SKU: " + sku + "\n\nPlease advise on current inventory levels.";
         }
     </script>
 </body>

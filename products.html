@@ -2,31 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
-    <!-- Mobile Specific & SEO Metas -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="description" content="Industrial Coding Machine Supplier in Sri Lanka. Supplier of Continuous Inkjet (CIJ) spare parts and maintenance services.">
+    <meta name="description" content="Industrial Coding Machine Supplier in Sri Lanka. Supplier of Continuous Inkjet (CIJ) spare parts and factory automation services.">
     <meta name="author" content="Vishwa Kaushal">
     <meta name="ownername" content="Rohana Ranatunga">
     <meta name="generator" content="VK Industrial Technologies">
-    <meta name="google-adsense-account" content="ca-pub-3488214634859413">
     
-    <title>Component Catalog | VK Industrial Technologies</title>
+    <title>Products | VK Industrial Technologies</title>
     
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
-    
-    <!-- Fonts and CSS -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        .product-card {
+            background: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+        .product-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; width: 100%; height: 3px;
+            background: var(--brand-red);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--brand-red);
+        }
+        .product-card:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        .product-tag { font-size: 0.75rem; font-weight: 800; color: var(--brand-red); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.5rem; }
+        .product-title { color: var(--brand-dark); font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .product-sku { font-size: 0.85rem; color: var(--steel-gray); font-family: 'JetBrains Mono', monospace; margin-bottom: 1rem; }
+        .product-desc { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+        
+        .catalog-filter { display: flex; justify-content: center; gap: 0.8rem; margin-bottom: 3.5rem; flex-wrap: wrap; }
+        .filter-btn { padding: 0.5rem 1.2rem; border: 1px solid var(--border-color); background: #FFFFFF; color: var(--text-muted); border-radius: 4px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+        .filter-btn.active, .filter-btn:hover { background-color: var(--brand-dark); color: #FFFFFF; border-color: var(--brand-dark); }
+    </style>
 </head>
-
-<body>
+<body class="bg-alt">
 
     <div class="top-bar">
-        <div>Continuous Inkjet (CIJ) Spare Parts & Service Hotline</div>
-        <div><strong>Support:</strong> +94 XX XXX XXXX</div>
+        <div>System Status: Online | CIJ Spare Parts & Service Hotline</div>
+        <div><strong>Support:</strong> +94 77 239 6599</div>
     </div>
 
     <header>
@@ -34,27 +68,27 @@
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
-            <a href="products.html" style="color: var(--blue-electric);">Spare Parts Catalog</a>
-            <a href="contact.html">Contact</a>
+            <a href="products.html" style="color: var(--brand-red);">Products</a>
+            <a href="contact.html">Contact Us</a>
         </nav>
-        <a href="contact.html" class="btn-primary">Request Parts Quote</a>
+        <a href="contact.html" class="btn-primary">Initiate Inquiry</a>
     </header>
 
-    <section style="padding-top: 3rem;">
-        <div class="section-header">
-            <h2>Industrial Spare Parts & Consumables</h2>
-            <p>Select components engineered for high durability and reduced factory maintenance costs.</p>
+    <section style="padding-top: 4rem;">
+        <!-- Explicitly Centered Header -->
+        <div class="section-header" style="text-align: center; margin: 0 auto 3.5rem; max-width: 800px;">
+            <h2 style="text-transform: uppercase;">Industrial Hardware Catalog</h2>
+            <p>Select components engineered for high durability and extremely low maintenance costs.</p>
         </div>
 
         <div class="catalog-filter">
-            <button class="filter-btn active" onclick="filterProducts('all')">All Products</button>
+            <button class="filter-btn active" onclick="filterProducts('all')">All Hardware</button>
             <button class="filter-btn" onclick="filterProducts('nozzles')">Nozzles & Printheads</button>
             <button class="filter-btn" onclick="filterProducts('fluids')">Inks & Consumables</button>
             <button class="filter-btn" onclick="filterProducts('pumps')">Pumps & Valves</button>
         </div>
 
-        <div class="product-grid">
-            <!-- Product 1 -->
+        <div class="grid" id="productGrid">
             <div class="product-card" data-category="nozzles">
                 <div>
                     <div class="product-tag">Printhead Component</div>
@@ -62,11 +96,9 @@
                     <div class="product-sku">SKU: VK-NZL-60U</div>
                     <div class="product-desc">High-precision sapphire micro-nozzle for precise droplet deflection. Built for heavy-duty industrial coding lines.</div>
                 </div>
-                <!-- Redirects to Contact page with URL parameter -->
-                <a href="contact.html?sku=VK-NZL-60U" class="btn-secondary" style="text-align: center;">Inquire SKU</a>
+                <a href="contact.html?sku=VK-NZL-60U" class="btn-secondary" style="text-align: center; width: 100%;">Inquire SKU</a>
             </div>
 
-            <!-- Product 2 -->
             <div class="product-card" data-category="fluids">
                 <div>
                     <div class="product-tag">Consumables</div>
@@ -74,10 +106,9 @@
                     <div class="product-sku">SKU: VK-INK-BLK1L</div>
                     <div class="product-desc">Formulated for optimal fluid dynamics on plastic, glass bottles, and packaging films. Low filter wear.</div>
                 </div>
-                <a href="contact.html?sku=VK-INK-BLK1L" class="btn-secondary" style="text-align: center;">Inquire SKU</a>
+                <a href="contact.html?sku=VK-INK-BLK1L" class="btn-secondary" style="text-align: center; width: 100%;">Inquire SKU</a>
             </div>
             
-            <!-- Product 3 -->
             <div class="product-card" data-category="pumps">
                 <div>
                     <div class="product-tag">Hydraulic System</div>
@@ -85,15 +116,22 @@
                     <div class="product-sku">SKU: VK-PMP-MAIN</div>
                     <div class="product-desc">Heavy-duty core fluid pump engineered to maintain uniform ink pressure during continuous 24/7 factory operation.</div>
                 </div>
-                <a href="contact.html?sku=VK-PMP-MAIN" class="btn-secondary" style="text-align: center;">Inquire SKU</a>
+                <a href="contact.html?sku=VK-PMP-MAIN" class="btn-secondary" style="text-align: center; width: 100%;">Inquire SKU</a>
             </div>
         </div>
     </section>
 
+    <!-- Mobile Sticky Action Bar -->
+    <div class="mobile-action-bar">
+        <a href="tel:+94XXXXXXXXX"><span style="color: var(--brand-red);">●</span> Call Support</a>
+        <a href="products.html"><span style="color: var(--brand-red);">●</span> Products</a>
+        <a href="contact.html"><span style="color: var(--brand-red);">●</span> Email</a>
+    </div>
+
     <footer>
         <div class="footer-content">
-            <div class="logo" style="color: #FFF;">VK <span style="color: var(--blue-electric);">TECHNOLOGIES</span></div>
-            <div style="font-size: 0.9rem; color: #CBD5E1;">Industrial Innovation. Reliable Solutions.</div>
+            <div class="logo" style="color: #FFF;">VK <span style="color: var(--brand-red);">TECHNOLOGIES</span></div>
+            <div style="font-size: 0.9rem; color: #E4E4E7;">Industrial Innovation. Reliable Solutions.</div>
         </div>
         <div class="footer-bottom">© 2026 VK Industrial Technologies. All rights reserved.</div>
     </footer>

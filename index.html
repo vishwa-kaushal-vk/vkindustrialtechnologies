@@ -2,70 +2,94 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
-    <!-- Mobile Specific & SEO Metas -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="description" content="Industrial Coding Machine Supplier in Sri Lanka. Supplier of Continuous Inkjet (CIJ) spare parts and maintenance services.">
+    <meta name="description" content="Industrial Coding Machine Supplier in Sri Lanka. Supplier of Continuous Inkjet (CIJ) spare parts and factory automation services.">
     <meta name="author" content="Vishwa Kaushal">
     <meta name="ownername" content="Rohana Ranatunga">
     <meta name="generator" content="VK Industrial Technologies">
-    <meta name="google-adsense-account" content="ca-pub-3488214634859413">
     
     <title>VK Industrial Technologies | Coding & Automation Systems</title>
     
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
-    
-    <!-- Fonts and CSS -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <div class="top-bar">
-        <div>Continuous Inkjet (CIJ) Spare Parts & Service Hotline</div>
+        <div>System Status: Online | CIJ Spare Parts & Service Hotline</div>
         <div><strong>Support:</strong> +94 77 239 6599</div>
     </div>
 
     <header>
         <div class="logo">VK <span>TECHNOLOGIES</span></div>
         <nav>
-            <a href="index.html">Home</a>
+            <a href="index.html" style="color: var(--brand-red);">Home</a>
             <a href="about.html">About Us</a>
-            <a href="products.html">Spare Parts Catalog</a>
-            <a href="contact.html">Contact</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact Us</a>
         </nav>
-        <a href="contact.html" class="btn-primary">Request Parts Quote</a>
+        <a href="contact.html" class="btn-primary">Initiate Inquiry</a>
     </header>
 
-    <section class="hero">
-        <div class="badge">Precision Industrial Engineering</div>
+    <!-- Hero with Grid & Typing Effect -->
+    <section class="hero engineering-grid">
+        <div class="terminal-text">
+            > <span id="typed-text"></span><span class="cursor"></span>
+        </div>
         <h1>VK INDUSTRIAL <span>TECHNOLOGIES</span></h1>
-        <p class="tagline">Industrial Innovation. Reliable Solutions.</p>
         <p class="subtext">
-            Specialized supplier of Continuous Inkjet (CIJ) spare parts, high-performance fluids, and maintenance engineering designed for zero production downtime.
+            Specialized supplier of Continuous Inkjet (CIJ) hardware, high-performance fluids, and technical engineering engineered for strictly low maintenance cost and maximum production uptime.
         </p>
         <div class="cta-group">
-            <a href="products.html" class="btn-primary">Browse Parts Catalog</a>
-            <a href="about.html" class="btn-secondary">Learn About Our Vision</a>
+            <a href="products.html" class="btn-primary">Access Hardware Catalog</a>
         </div>
     </section>
 
-    <section class="bg-alt">
-        <div class="section-header">
-            <h2>Trusted by Manufacturing Lines</h2>
-            <p>Providing the components that keep critical packaging and coding systems running 24/7.</p>
+    <!-- Hover-Effect Tech Cards -->
+    <section style="padding: 4rem 5%;" class="bg-alt">
+        <div class="grid">
+            <div class="tech-card">
+                <h3 style="color: var(--brand-dark); margin-bottom: 10px;">CIJ Core Components</h3>
+                <p style="color: var(--text-muted);">High-precision nozzles, pumps, and valves designed to eliminate flow restriction and lower OEM maintenance costs.</p>
+            </div>
+            <div class="tech-card">
+                <h3 style="color: var(--brand-dark); margin-bottom: 10px;">System Diagnostics</h3>
+                <p style="color: var(--text-muted);">Advanced troubleshooting, printhead calibrations, and fluid flow restoration for industrial printing systems.</p>
+            </div>
+            <div class="tech-card">
+                <h3 style="color: var(--brand-dark); margin-bottom: 10px;">Consumable Engineering</h3>
+                <p style="color: var(--text-muted);">Fast-dry chemical ink formulations engineered for zero-clog continuous operation on plastic and glass.</p>
+            </div>
         </div>
     </section>
 
-    <footer>
-        <div class="footer-content">
-            <div class="logo" style="color: #FFF;">VK <span style="color: var(--blue-electric);">TECHNOLOGIES</span></div>
-            <div style="font-size: 0.9rem; color: #CBD5E1;">Industrial Innovation. Reliable Solutions.</div>
+    <!-- Dark Lab Aesthetic Section (Automation Future) -->
+    <section class="dark-lab">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <h3>SCALING TO FULL AUTOMATION</h3>
+            <p style="font-size: 1.1rem; color: #A1A1AA; margin-bottom: 2rem;">
+                Beyond CIJ coding, our engineering blueprint is expanding into full-scale factory automation, servicing high-speed bottle manufacturing and automated food-processing packaging lines.
+            </p>
+            
+            <div style="background: rgba(255,0,0,0.05); border: 1px solid var(--brand-red); padding: 2rem; border-radius: 4px;">
+                <h4 style="color: #FFF; margin-bottom: 10px;">Download Component Blueprint</h4>
+                <p style="color: #A1A1AA; margin-bottom: 1.5rem; font-size: 0.9rem;">
+                    Access our comprehensive 8-page A4 component book detailing specs for all supported industrial hardware.
+                </p>
+                <a href="#" class="btn-primary" style="background: transparent; color: var(--brand-red);">Download 8-Page A4 PDF</a>
+            </div>
         </div>
-        <div class="footer-bottom">© 2026 VK Industrial Technologies. All rights reserved.</div>
-    </footer>
+    </section>
 
+    <!-- Mobile Sticky Action Bar -->
+    <div class="mobile-action-bar">
+        <a href="tel:+94XXXXXXXXX"><span style="color: var(--brand-red);">●</span> Call Support</a>
+        <a href="products.html"><span style="color: var(--brand-red);">●</span> Parts</a>
+        <a href="contact.html"><span style="color: var(--brand-red);">●</span> Email</a>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
