@@ -27,3 +27,47 @@ function selectProductForInquiry(productSku, productName) {
         formSection.scrollIntoView({ behavior: 'smooth' });
     }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    // 1. PLC Terminal Typing Effect
+    const textArray = [
+        "INITIALIZING FLUID DYNAMICS...",
+        "CALIBRATING CIJ PRINTHEADS...",
+        "SYSTEM UPTIME: 99.9% MAINTAINED.",
+        "INDUSTRIAL INNOVATION. RELIABLE SOLUTIONS."
+    ];
+    let textIndex = 0;
+    let charIndex = 0;
+    const typeSpeed = 50;
+    const eraseSpeed = 30;
+    const delayBetweenTexts = 2000;
+    
+    const terminalElement = document.getElementById("typed-text");
+
+    function type() {
+        if (charIndex < textArray[textIndex].length) {
+            terminalElement.textContent += textArray[textIndex].charAt(charIndex);
+            charIndex++;
+            setTimeout(type, typeSpeed);
+        } else {
+            setTimeout(erase, delayBetweenTexts);
+        }
+    }
+
+    function erase() {
+        if (charIndex > 0) {
+            terminalElement.textContent = textArray[textIndex].substring(0, charIndex - 1);
+            charIndex--;
+            setTimeout(erase, eraseSpeed);
+        } else {
+            textIndex++;
+            if (textIndex >= textArray.length) textIndex = 0; // Loop back
+            setTimeout(type, typeSpeed);
+        }
+    }
+
+    // Start typing effect on load
+    if(terminalElement) {
+        setTimeout(type, 1000);
+    }
+});

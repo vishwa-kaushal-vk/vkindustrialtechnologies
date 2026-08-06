@@ -1,16 +1,16 @@
 :root {
     --bg-light: #FFFFFF;
-    --bg-secondary: #F8FAFC;
-    --navy-primary: #1B365D;
-    --navy-dark: #0F2744;
-    --blue-electric: #0088FF;
-    --steel-gray: #64748B;
-    --steel-light: #E2E8F0;
-    --text-main: #0F172A;
-    --text-muted: #475569;
-    --border-color: #E2E8F0;
+    --bg-secondary: #F4F4F5; 
+    --bg-tech-dark: #121212; /* Dark tech aesthetic */
+    --brand-red: #D32F2F; 
+    --brand-red-glow: rgba(211, 47, 47, 0.4);
+    --brand-dark: #1A1A1A; 
+    --steel-gray: #71717A;
+    --border-color: #E4E4E7;
+    --text-main: #18181B;
+    --text-muted: #52525B;
     --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
-    --shadow-md: 0 10px 25px -5px rgba(27, 54, 93, 0.08);
+    --shadow-md: 0 10px 25px -5px rgba(0,0,0,0.1);
 }
 
 * {
@@ -27,9 +27,17 @@ body {
     line-height: 1.6;
 }
 
+/* --- ENGINEERING GRID BACKGROUND --- */
+.engineering-grid {
+    background-size: 40px 40px;
+    background-image: 
+        linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+}
+
 /* Header & Nav */
 .top-bar {
-    background-color: var(--navy-primary);
+    background-color: var(--brand-dark);
     color: #FFFFFF;
     font-size: 0.85rem;
     padding: 0.5rem 5%;
@@ -49,19 +57,16 @@ header {
     top: 0;
     z-index: 1000;
     border-bottom: 1px solid var(--border-color);
-    box-shadow: var(--shadow-sm);
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 800;
     letter-spacing: -0.5px;
-    color: var(--navy-primary);
+    color: var(--brand-dark);
 }
 
-.logo span {
-    color: var(--blue-electric);
-}
+.logo span { color: var(--brand-red); }
 
 nav a {
     color: var(--text-muted);
@@ -72,86 +77,63 @@ nav a {
     transition: color 0.2s;
 }
 
-nav a:hover {
-    color: var(--blue-electric);
+nav a:hover { color: var(--brand-red); }
+
+/* --- TERMINAL TYPING EFFECT --- */
+.terminal-text {
+    font-family: monospace;
+    color: var(--brand-red);
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    min-height: 24px;
 }
+.cursor {
+    display: inline-block;
+    width: 8px;
+    height: 1.2rem;
+    background-color: var(--brand-red);
+    animation: blink 1s step-end infinite;
+    vertical-align: text-bottom;
+}
+@keyframes blink { 50% { opacity: 0; } }
 
 /* Buttons */
 .btn-primary {
-    background: linear-gradient(135deg, var(--navy-primary), var(--blue-electric));
+    background: var(--brand-red);
     color: #FFFFFF;
     padding: 0.7rem 1.5rem;
-    border-radius: 6px;
+    border-radius: 4px; /* Sharper industrial corners */
     text-decoration: none;
     font-weight: 600;
     font-size: 0.9rem;
     display: inline-block;
-    border: none;
+    border: 1px solid var(--brand-red);
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 136, 255, 0.3);
-}
-
-.btn-secondary {
-    background-color: transparent;
-    color: var(--navy-primary);
-    border: 2px solid var(--navy-primary);
-    padding: 0.65rem 1.5rem;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-    display: inline-block;
-    transition: background 0.2s, color 0.2s;
-}
-
-.btn-secondary:hover {
-    background-color: var(--navy-primary);
-    color: #FFFFFF;
+    background: transparent;
+    color: var(--brand-red);
+    box-shadow: 0 0 15px var(--brand-red-glow);
 }
 
 /* Hero */
 .hero {
-    padding: 6rem 5% 5rem;
-    background: linear-gradient(180deg, #F0F6FF 0%, var(--bg-light) 100%);
+    padding: 8rem 5% 7rem;
     text-align: center;
-}
-
-.badge {
-    background-color: #E0F2FE;
-    color: var(--blue-electric);
-    padding: 0.4rem 1rem;
-    border-radius: 50px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    display: inline-block;
-    margin-bottom: 1.5rem;
-    border: 1px solid #BAE6FD;
+    position: relative;
 }
 
 .hero h1 {
-    font-size: 3.2rem;
+    font-size: 4rem;
     font-weight: 800;
-    color: var(--navy-primary);
-    line-height: 1.2;
+    color: var(--brand-dark);
+    line-height: 1.1;
     margin-bottom: 1rem;
-}
-
-.hero h1 span {
-    color: var(--blue-electric);
-}
-
-.hero p.tagline {
-    font-size: 1.2rem;
-    color: var(--steel-gray);
-    font-weight: 600;
-    margin-bottom: 1.5rem;
+    text-transform: uppercase;
 }
 
 .hero p.subtext {
@@ -161,171 +143,109 @@ nav a:hover {
     font-size: 1.1rem;
 }
 
-.cta-group {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-}
-
-/* Sections & Grids */
-section {
-    padding: 5rem 5%;
-}
-
-.bg-alt {
-    background-color: var(--bg-secondary);
-}
-
-.section-header {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 3.5rem;
-}
-
-.section-header h2 {
-    font-size: 2.2rem;
-    color: var(--navy-primary);
-    font-weight: 800;
-    margin-bottom: 0.5rem;
-}
-
-.section-header p {
-    color: var(--steel-gray);
-    font-size: 1.05rem;
-}
-
-/* Product Catalog Styles */
-.catalog-filter {
-    display: flex;
-    justify-content: center;
-    gap: 0.8rem;
-    margin-bottom: 2.5rem;
-    flex-wrap: wrap;
-}
-
-.filter-btn {
-    padding: 0.5rem 1.2rem;
-    border: 1px solid var(--border-color);
-    background: #FFFFFF;
-    color: var(--text-muted);
-    border-radius: 20px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.filter-btn.active, .filter-btn:hover {
-    background-color: var(--navy-primary);
-    color: #FFFFFF;
-    border-color: var(--navy-primary);
-}
-
-.product-grid {
+/* --- HARDWARE HOVER CARDS --- */
+.grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.product-card {
-    background: #FFFFFF;
+.tech-card {
+    background: var(--bg-light);
     border: 1px solid var(--border-color);
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow: var(--shadow-sm);
-    transition: transform 0.3s, box-shadow 0.3s;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
 }
 
-.product-card:hover {
+.tech-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 3px;
+    background: var(--brand-red);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.tech-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-md);
-    border-color: var(--blue-electric);
 }
 
-.product-tag {
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--blue-electric);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 0.5rem;
+.tech-card:hover::before {
+    transform: scaleX(1);
 }
 
-.product-title {
-    color: var(--navy-primary);
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
+/* --- DARK TECH SECTION --- */
+.dark-lab {
+    background-color: var(--bg-tech-dark);
+    color: #FFFFFF;
+    background-image: 
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+    padding: 6rem 5%;
 }
 
-.product-sku {
-    font-size: 0.85rem;
-    color: var(--steel-gray);
-    font-family: monospace;
-    margin-bottom: 1rem;
+.dark-lab h3 { color: var(--brand-red); font-size: 2.5rem; margin-bottom: 1rem;}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .top-bar { display: none; } /* Hide top bar on small screens to save space */
+    nav { display: none; } /* Use a hamburger menu in future, hide for now */
+    .hero h1 { font-size: 2.5rem; }
+    .hero { padding: 5rem 5% 4rem; }
+    
+    /* Sticky Mobile Footer Action Bar */
+    .mobile-action-bar {
+        position: fixed;
+        bottom: 0; left: 0; width: 100%;
+        background: var(--brand-dark);
+        display: flex;
+        justify-content: space-around;
+        padding: 1rem;
+        z-index: 1000;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+    }
+    .mobile-action-bar a {
+        color: #FFF;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+}
+@media (min-width: 769px) {
+    .mobile-action-bar { display: none; }
 }
 
-.product-desc {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    margin-bottom: 1.5rem;
-}
 
-/* Contact Box */
-.contact-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    max-width: 1100px;
-    margin: 0 auto;
-    background: #FFFFFF;
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 3rem;
-    box-shadow: var(--shadow-md);
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-input, select, textarea {
-    width: 100%;
-    padding: 0.8rem 1rem;
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    font-size: 0.95rem;
-    outline: none;
-}
-
-input:focus, select:focus, textarea:focus {
-    border-color: var(--blue-electric);
-}
-
-/* Footer */
 footer {
-    background-color: var(--navy-primary);
+    background-color: var(--brand-dark);
     color: #FFFFFF;
     padding: 3rem 5% 1.5rem;
+    text-align: center; /* Centers all footer text */
 }
 
 .footer-content {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* Stacks the logo and tagline vertically */
+    justify-content: center;
     align-items: center;
-    border-bottom: 1px solid #2A4365;
+    gap: 0.5rem;
+    border-bottom: 1px solid #3F3F46;
     padding-bottom: 2rem;
     margin-bottom: 1.5rem;
 }
 
 .footer-bottom {
     text-align: center;
-    color: #94A3B8;
+    color: #A1A1AA;
     font-size: 0.85rem;
 }
